@@ -51,6 +51,7 @@ function MobileNav({ isOpen, onClose, isAuthenticated }) {
         { id: 'profile', name: 'My Profile', icon: User, path: '/student/profile', description: 'Personal information' },
         { id: 'courses', name: 'My Courses', icon: GraduationCap, path: '/student/courses', description: 'Enrolled courses' },
         { id: 'results', name: 'My Results', icon: BarChart3, path: '/student/results', description: 'Grades & achievements' },
+
     ]
 
     const handleNavClick = (path) => {

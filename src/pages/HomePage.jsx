@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { GraduationCap, BookOpen, Users, Award, ArrowRight, Play } from 'lucide-react'
+import { GraduationCap, BookOpen, Users, Award, ArrowRight, Play, LogIn } from 'lucide-react'
 import { useAuth } from '../contexts/AuthContext'
 import { motion } from 'framer-motion'
 function HomePage() {
@@ -74,7 +74,21 @@ function HomePage() {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
-                        <GraduationCap className="w-16 h-16 text-white" />
+                        <div className="relative w-full h-full bg-white rounded-3xl shadow-lg flex items-center justify-center overflow-hidden">
+                            <img
+                                src="logo.jpeg"
+                                alt="Logo"
+                                className="object-contain"
+                                onError={(e) => {
+                                    // Fallback to icon if image fails to load
+                                    e.target.style.display = 'none';
+                                    e.target.nextSibling.style.display = 'flex';
+                                }}
+                            />
+                            <div className="absolute inset-0 hidden items-center justify-center">
+                                <LogIn className="w-12 h-12 text-blue-600" />
+                            </div>
+                        </div>
                     </motion.div>
 
                     {/* Hero Text */}
