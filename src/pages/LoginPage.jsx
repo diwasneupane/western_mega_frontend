@@ -116,8 +116,27 @@ function LoginPage() {
             >
                 {/* Header */}
                 <motion.div className="text-center mb-8" variants={itemVariants}>
-                    <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl mx-auto mb-4 flex items-center justify-center shadow-lg">
-                        <LogIn className="w-10 h-10 text-white" />
+                    <div className="relative mb-6">
+                        {/* Logo Container with Enhanced Design */}
+                        <div className="w-24 h-24 mx-auto relative">
+
+                            <div className="absolute inset-0 bg-white rounded-3xl shadow-xl transform -rotate-1"></div>
+                            <div className="relative w-full h-full bg-white rounded-3xl shadow-lg flex items-center justify-center overflow-hidden">
+                                <img
+                                    src="logo.jpeg"
+                                    alt="Logo"
+                                    className="object-contain"
+                                    onError={(e) => {
+                                        // Fallback to icon if image fails to load
+                                        e.target.style.display = 'none';
+                                        e.target.nextSibling.style.display = 'flex';
+                                    }}
+                                />
+                                <div className="absolute inset-0 hidden items-center justify-center">
+                                    <LogIn className="w-12 h-12 text-blue-600" />
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <h1 className="text-3xl font-bold text-gray-900 mb-2">Welcome Back!</h1>
                     <p className="text-gray-600">Sign in to access your student portal</p>
